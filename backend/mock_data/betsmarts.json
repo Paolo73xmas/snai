@@ -1,0 +1,14 @@
+[
+    {
+        "codice": "BS-001",
+        "name": "BetSmart 1",
+        "status": "attiva",
+        "notes": "Terminale BetSmart 1"
+    },
+    {
+        "codice": "BS-002",
+        "name": "BetSmart 2",
+        "status": "attiva",
+        "notes": "Terminale BetSmart 2"
+    }
+]

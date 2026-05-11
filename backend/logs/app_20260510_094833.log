@@ -1,0 +1,27 @@
+2026-05-10 09:48:33,777 - main - INFO - === Logging system initialized ===
+2026-05-10 09:48:33,777 - main - INFO - Log file: logs/app_20260510_094833.log
+2026-05-10 09:48:33,777 - main - INFO - Log level: INFO
+2026-05-10 09:48:33,777 - main - INFO - Timestamp: 20260510_094833
+2026-05-10 09:48:34,911 - main - INFO - Included router: routers.aihub.router
+2026-05-10 09:48:34,939 - main - INFO - Included router: routers.auth.router
+2026-05-10 09:48:34,992 - main - INFO - Included router: routers.betsmarts.router
+2026-05-10 09:48:35,135 - main - INFO - Included router: routers.cash_ops.router
+2026-05-10 09:48:35,187 - main - INFO - Included router: routers.cashes.router
+2026-05-10 09:48:35,243 - main - INFO - Included router: routers.discrepancies.router
+2026-05-10 09:48:35,250 - main - INFO - Included router: routers.health.router
+2026-05-10 09:48:35,508 - main - INFO - Included router: routers.movements.router
+2026-05-10 09:48:35,541 - main - INFO - Included router: routers.public_auth.router
+2026-05-10 09:48:35,567 - main - INFO - Included router: routers.settings.router
+2026-05-10 09:48:35,647 - main - INFO - Included router: routers.shifts.router
+2026-05-10 09:48:35,695 - main - INFO - Included router: routers.storage.router
+2026-05-10 09:48:35,707 - main - INFO - Included router: routers.user.router
+2026-05-10 09:48:35,760 - main - INFO - Included router: routers.user_profiles.router
+2026-05-10 09:48:35,812 - main - INFO - Included router: routers.vlts.router
+2026-05-10 09:48:35,814 - main - INFO - === Application startup initiated ===
+2026-05-10 09:48:35,814 - services.database - INFO - Ignore creating tables
+2026-05-10 09:48:35,814 - services.mock_data - INFO - Ignore initialize data
+2026-05-10 09:48:35,815 - services.auth - INFO - Ignore initialize admin
+2026-05-10 09:48:35,815 - main - INFO - === Application startup completed successfully ===
+2026-05-10 09:48:35,916 - services.database - DEBUG - [DB_OP] Starting database close
+2026-05-10 09:48:35,917 - services.database - INFO - Database connections closed
+2026-05-10 09:48:35,917 - services.database - DEBUG - [DB_OP] Database close completed in 0.0015s

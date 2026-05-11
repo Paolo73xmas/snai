@@ -1,0 +1,14 @@
+[
+    {
+        "codice": "VLT-001",
+        "name": "VLT Sala 1",
+        "status": "attiva",
+        "notes": "Videolottery sala principale"
+    },
+    {
+        "codice": "VLT-002",
+        "name": "VLT Sala 2",
+        "status": "attiva",
+        "notes": "Videolottery sala secondaria"
+    }
+]

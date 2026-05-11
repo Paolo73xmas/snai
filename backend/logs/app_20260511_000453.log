@@ -1,0 +1,122 @@
+2026-05-11 00:04:53,325 - main - INFO - === Logging system initialized ===
+2026-05-11 00:04:53,325 - main - INFO - Log file: logs/app_20260511_000453.log
+2026-05-11 00:04:53,326 - main - INFO - Log level: INFO
+2026-05-11 00:04:53,327 - main - INFO - Timestamp: 20260511_000453
+2026-05-11 00:05:06,720 - main - INFO - Included router: routers.aihub.router
+2026-05-11 00:05:06,843 - main - INFO - Included router: routers.auth.router
+2026-05-11 00:05:06,932 - main - INFO - Included router: routers.betsmarts.router
+2026-05-11 00:05:07,110 - main - INFO - Included router: routers.cash_ops.router
+2026-05-11 00:05:07,182 - main - INFO - Included router: routers.cashes.router
+2026-05-11 00:05:07,303 - main - INFO - Included router: routers.discrepancies.router
+2026-05-11 00:05:07,334 - main - INFO - Included router: routers.health.router
+2026-05-11 00:05:07,595 - main - INFO - Included router: routers.movements.router
+2026-05-11 00:05:07,631 - main - INFO - Included router: routers.public_auth.router
+2026-05-11 00:05:07,689 - main - INFO - Included router: routers.settings.router
+2026-05-11 00:05:07,806 - main - INFO - Included router: routers.shifts.router
+2026-05-11 00:05:07,930 - main - INFO - Included router: routers.storage.router
+2026-05-11 00:05:08,067 - main - INFO - Included router: routers.user.router
+2026-05-11 00:05:08,151 - main - INFO - Included router: routers.user_profiles.router
+2026-05-11 00:05:08,310 - main - INFO - Included router: routers.vlts.router
+2026-05-11 00:05:08,312 - main - INFO - === Application startup initiated ===
+2026-05-11 00:05:08,313 - services.database - INFO - Ignore creating tables
+2026-05-11 00:05:08,313 - services.mock_data - INFO - Ignore initialize data
+2026-05-11 00:05:08,313 - services.auth - INFO - Ignore initialize admin
+2026-05-11 00:05:08,313 - main - INFO - === Application startup completed successfully ===
+2026-05-11 00:05:20,413 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-05-11 00:05:20,413 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-05-11 00:05:20,584 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:05:20,584 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:05:20,584 - core.database - WARNING - Database session maker not available, attempting lazy initialization...
+2026-05-11 00:05:20,584 - core.database - WARNING - Database not initialized, attempting lazy initialization...
+2026-05-11 00:05:20,585 - core.database - INFO - Starting database initialization...
+2026-05-11 00:05:20,586 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-05-11 00:05:20,586 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-05-11 00:05:20,587 - core.database - INFO - Creating async database engine...
+2026-05-11 00:05:20,587 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-05-11 00:05:20,625 - core.database - INFO - Database engine created successfully
+2026-05-11 00:05:20,626 - core.database - INFO - Creating async session maker...
+2026-05-11 00:05:20,626 - core.database - INFO - Async session maker created successfully
+2026-05-11 00:05:20,626 - core.database - INFO - Database connection initialized successfully
+2026-05-11 00:05:20,626 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-05-11 00:05:20,626 - core.database - INFO - 🔧 Starting table creation...
+2026-05-11 00:05:22,378 - core.database - INFO - Tables initialized successfully
+2026-05-11 00:05:22,378 - core.database - DEBUG - [DB_OP] Create tables completed in 1.7524s
+2026-05-11 00:05:22,441 - core.database - INFO - Lazy database initialization completed successfully
+2026-05-11 00:05:22,442 - core.database - DEBUG - [DB_OP] Database session created successfully in 1.8575s
+2026-05-11 00:05:22,957 - core.database - DEBUG - [DB_OP] Database session cleanup after 2.3726s
+2026-05-11 00:05:23,154 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:05:23,155 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:05:23,155 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 00:05:24,134 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.9797s
+2026-05-11 00:05:54,092 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:05:54,092 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:05:54,093 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 00:05:54,792 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6994s
+2026-05-11 00:06:24,096 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:06:24,097 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:06:24,097 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 00:06:24,797 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7001s
+2026-05-11 00:06:54,088 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:06:54,088 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:06:54,088 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 00:06:54,788 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7003s
+2026-05-11 00:07:24,088 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:07:24,089 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:07:24,090 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-05-11 00:07:24,789 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6998s
+2026-05-11 00:07:54,092 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:07:54,093 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:07:54,093 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-05-11 00:07:54,795 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7023s
+2026-05-11 00:08:24,258 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:08:24,258 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:08:24,258 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-05-11 00:08:24,957 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6990s
+2026-05-11 00:09:07,105 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:09:07,106 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:09:07,106 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 00:09:07,802 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6966s
+2026-05-11 00:10:07,101 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:10:07,102 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:10:07,102 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 00:10:07,798 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6965s
+2026-05-11 00:11:07,100 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:11:07,101 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:11:07,101 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 00:11:07,923 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.8226s
+2026-05-11 00:12:07,126 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:12:07,126 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:12:07,126 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 00:12:07,822 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6955s
+2026-05-11 00:13:07,112 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:13:07,113 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:13:07,113 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-05-11 00:13:07,813 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7006s
+2026-05-11 00:14:07,115 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:14:07,116 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:14:07,116 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 00:14:07,814 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6989s
+2026-05-11 00:15:07,106 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:15:07,106 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:15:07,107 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 00:15:07,803 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6971s
+2026-05-11 00:16:07,117 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:16:07,118 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:16:07,119 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 00:16:07,813 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6951s
+2026-05-11 00:17:07,105 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:17:07,106 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:17:07,106 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-05-11 00:17:07,928 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.8223s
+2026-05-11 00:18:07,104 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:18:07,105 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:18:07,105 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 00:18:07,805 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7005s
+2026-05-11 00:19:07,112 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 00:19:07,113 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 00:19:07,113 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 00:19:07,812 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6989s
+2026-05-11 00:19:58,771 - services.database - DEBUG - [DB_OP] Starting database close
+2026-05-11 00:19:58,845 - core.database - INFO - Database connection closed and engine disposed
+2026-05-11 00:19:58,845 - services.database - INFO - Database connections closed
+2026-05-11 00:19:58,845 - services.database - DEBUG - [DB_OP] Database close completed in 0.0742s

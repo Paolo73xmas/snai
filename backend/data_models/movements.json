@@ -1,0 +1,88 @@
+{
+    "title": "movements",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "user_id": {
+            "type": "string",
+            "description": "User ID who performed the movement"
+        },
+        "user_name": {
+            "type": "string",
+            "description": "User display name"
+        },
+        "user_role": {
+            "type": "string",
+            "description": "Role of the user"
+        },
+        "tipo_movimento": {
+            "type": "string",
+            "description": "Movement type enum"
+        },
+        "importo": {
+            "type": "number",
+            "description": "Amount"
+        },
+        "cassa_origine_id": {
+            "type": "integer",
+            "description": "Source cash ID"
+        },
+        "cassa_destinazione_id": {
+            "type": "integer",
+            "description": "Destination cash ID"
+        },
+        "saldo_origine_prima": {
+            "type": "number",
+            "description": "Source balance before"
+        },
+        "saldo_origine_dopo": {
+            "type": "number",
+            "description": "Source balance after"
+        },
+        "saldo_destinazione_prima": {
+            "type": "number",
+            "description": "Destination balance before"
+        },
+        "saldo_destinazione_dopo": {
+            "type": "number",
+            "description": "Destination balance after"
+        },
+        "shift_id": {
+            "type": "integer",
+            "description": "Related shift ID"
+        },
+        "vlt_id": {
+            "type": "integer",
+            "description": "Related VLT ID"
+        },
+        "betsmart_id": {
+            "type": "integer",
+            "description": "Related BetSmart ID"
+        },
+        "causale": {
+            "type": "string",
+            "description": "Reason/cause"
+        },
+        "notes": {
+            "type": "string",
+            "description": "Additional notes"
+        },
+        "status": {
+            "type": "string",
+            "description": "registrato, verificato, rettificato, annullato"
+        },
+        "riferimento_movimento_id": {
+            "type": "integer",
+            "description": "Reference to original movement for corrections"
+        }
+    },
+    "required": [
+        "id",
+        "user_id",
+        "tipo_movimento",
+        "importo"
+    ]
+}

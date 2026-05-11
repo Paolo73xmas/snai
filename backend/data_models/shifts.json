@@ -1,0 +1,102 @@
+{
+    "title": "shifts",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "user_id": {
+            "type": "string",
+            "description": "User ID of the operator"
+        },
+        "user_name": {
+            "type": "string",
+            "description": "Operator display name"
+        },
+        "user_role": {
+            "type": "string",
+            "description": "Role of the user"
+        },
+        "cash_id": {
+            "type": "integer",
+            "description": "Cash register ID"
+        },
+        "cash_name": {
+            "type": "string",
+            "description": "Cash register name"
+        },
+        "opened_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Shift open time"
+        },
+        "closed_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Shift close time, null if open"
+        },
+        "saldo_teorico_apertura": {
+            "type": "number",
+            "description": "Theoretical balance at opening"
+        },
+        "saldo_fisico_apertura": {
+            "type": "number",
+            "description": "Physical balance at opening"
+        },
+        "discrepanza_apertura": {
+            "type": "number",
+            "description": "Opening discrepancy"
+        },
+        "note_apertura": {
+            "type": "string",
+            "description": "Opening notes"
+        },
+        "saldo_teorico_chiusura": {
+            "type": "number",
+            "description": "Theoretical balance at closing"
+        },
+        "saldo_fisico_chiusura": {
+            "type": "number",
+            "description": "Physical balance at closing"
+        },
+        "discrepanza_chiusura": {
+            "type": "number",
+            "description": "Closing discrepancy"
+        },
+        "note_chiusura": {
+            "type": "string",
+            "description": "Closing notes"
+        },
+        "status": {
+            "type": "string",
+            "description": "aperto, chiuso, chiuso_con_discrepanza, da_verificare, rettificato"
+        },
+        "totale_incassi": {
+            "type": "number",
+            "description": "Total collections during shift"
+        },
+        "totale_pagamenti": {
+            "type": "number",
+            "description": "Total payments during shift"
+        },
+        "totale_sovvenzioni": {
+            "type": "number",
+            "description": "Total subsidies received"
+        },
+        "totale_restituzioni": {
+            "type": "number",
+            "description": "Total returns made"
+        },
+        "totale_svuotamenti": {
+            "type": "number",
+            "description": "Total VLT/BetSmart emptying"
+        }
+    },
+    "required": [
+        "id",
+        "user_id",
+        "cash_id",
+        "status"
+    ]
+}

@@ -1,0 +1,26 @@
+2026-05-10 03:48:47,207 - main - INFO - === Logging system initialized ===
+2026-05-10 03:48:47,207 - main - INFO - Log file: logs/app_20260510_034847.log
+2026-05-10 03:48:47,207 - main - INFO - Log level: INFO
+2026-05-10 03:48:47,207 - main - INFO - Timestamp: 20260510_034847
+2026-05-10 03:48:48,289 - main - INFO - Included router: routers.aihub.router
+2026-05-10 03:48:48,313 - main - INFO - Included router: routers.auth.router
+2026-05-10 03:48:48,364 - main - INFO - Included router: routers.betsmarts.router
+2026-05-10 03:48:48,546 - main - INFO - Included router: routers.cash_ops.router
+2026-05-10 03:48:48,606 - main - INFO - Included router: routers.cashes.router
+2026-05-10 03:48:48,669 - main - INFO - Included router: routers.discrepancies.router
+2026-05-10 03:48:48,675 - main - INFO - Included router: routers.health.router
+2026-05-10 03:48:48,852 - main - INFO - Included router: routers.movements.router
+2026-05-10 03:48:48,880 - main - INFO - Included router: routers.settings.router
+2026-05-10 03:48:48,956 - main - INFO - Included router: routers.shifts.router
+2026-05-10 03:48:49,007 - main - INFO - Included router: routers.storage.router
+2026-05-10 03:48:49,024 - main - INFO - Included router: routers.user.router
+2026-05-10 03:48:49,077 - main - INFO - Included router: routers.user_profiles.router
+2026-05-10 03:48:49,120 - main - INFO - Included router: routers.vlts.router
+2026-05-10 03:48:49,121 - main - INFO - === Application startup initiated ===
+2026-05-10 03:48:49,121 - services.database - INFO - Ignore creating tables
+2026-05-10 03:48:49,122 - services.mock_data - INFO - Ignore initialize data
+2026-05-10 03:48:49,122 - services.auth - INFO - Ignore initialize admin
+2026-05-10 03:48:49,122 - main - INFO - === Application startup completed successfully ===
+2026-05-10 03:48:49,224 - services.database - DEBUG - [DB_OP] Starting database close
+2026-05-10 03:48:49,224 - services.database - INFO - Database connections closed
+2026-05-10 03:48:49,224 - services.database - DEBUG - [DB_OP] Database close completed in 0.0004s

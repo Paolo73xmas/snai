@@ -1,0 +1,28 @@
+2026-05-10 03:42:33,739 - main - INFO - === Logging system initialized ===
+2026-05-10 03:42:33,739 - main - INFO - Log file: logs/app_20260510_034233.log
+2026-05-10 03:42:33,739 - main - INFO - Log level: INFO
+2026-05-10 03:42:33,739 - main - INFO - Timestamp: 20260510_034233
+2026-05-10 03:42:34,636 - main - INFO - Included router: routers.aihub.router
+2026-05-10 03:42:34,654 - main - INFO - Included router: routers.auth.router
+2026-05-10 03:42:34,707 - main - INFO - Included router: routers.betsmarts.router
+2026-05-10 03:42:34,789 - main - INFO - Included router: routers.cash_ops.router
+2026-05-10 03:42:34,837 - main - INFO - Included router: routers.cashes.router
+2026-05-10 03:42:34,897 - main - INFO - Included router: routers.discrepancies.router
+2026-05-10 03:42:34,900 - main - INFO - Included router: routers.health.router
+2026-05-10 03:42:35,080 - main - INFO - Included router: routers.movements.router
+2026-05-10 03:42:35,104 - main - INFO - Included router: routers.settings.router
+2026-05-10 03:42:35,171 - main - INFO - Included router: routers.shifts.router
+2026-05-10 03:42:35,218 - main - INFO - Included router: routers.storage.router
+2026-05-10 03:42:35,232 - main - INFO - Included router: routers.user.router
+2026-05-10 03:42:35,285 - main - INFO - Included router: routers.user_profiles.router
+2026-05-10 03:42:35,338 - main - INFO - Included router: routers.vlts.router
+2026-05-10 03:42:35,340 - main - INFO - === Application startup initiated ===
+2026-05-10 03:42:35,340 - services.database - INFO - Ignore creating tables
+2026-05-10 03:42:35,340 - services.mock_data - INFO - Ignore initialize data
+2026-05-10 03:42:35,341 - services.auth - INFO - Ignore initialize admin
+2026-05-10 03:42:35,341 - main - INFO - === Application startup completed successfully ===
+2026-05-10 03:43:21,464 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-05-10 03:43:25,185 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-05-10 03:44:01,705 - services.database - DEBUG - [DB_OP] Starting database close
+2026-05-10 03:44:01,705 - services.database - INFO - Database connections closed
+2026-05-10 03:44:01,706 - services.database - DEBUG - [DB_OP] Database close completed in 0.0003s

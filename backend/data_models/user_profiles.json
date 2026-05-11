@@ -1,0 +1,48 @@
+{
+    "title": "user_profiles",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "user_id": {
+            "type": "string",
+            "description": "User ID"
+        },
+        "nome": {
+            "type": "string",
+            "description": "First name"
+        },
+        "cognome": {
+            "type": "string",
+            "description": "Last name"
+        },
+        "telefono": {
+            "type": "string",
+            "description": "Phone number"
+        },
+        "ruolo": {
+            "type": "string",
+            "description": "Role: admin, operator, operator_plus"
+        },
+        "status": {
+            "type": "string",
+            "description": "Status: attivo, disattivato"
+        },
+        "username": {
+            "type": "string",
+            "description": "Username for login"
+        },
+        "password_hash": {
+            "type": "string",
+            "description": "Hashed password for authentication"
+        }
+    },
+    "required": [
+        "id",
+        "user_id",
+        "ruolo",
+        "status"
+    ]
+}

@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Cassa Centrale",
+        "cash_type": "CASSA_CENTRALE",
+        "saldo_teorico": 10000.0,
+        "status": "libera",
+        "notes": "Cassa principale dell'agenzia"
+    },
+    {
+        "name": "Banca",
+        "cash_type": "BANCA",
+        "saldo_teorico": 50000.0,
+        "status": "libera",
+        "notes": "Conto bancario agenzia"
+    },
+    {
+        "name": "Cassa Operatore 1",
+        "cash_type": "CASSA_OPERATORE",
+        "saldo_teorico": 500.0,
+        "status": "libera",
+        "notes": "Cassa operatore postazione 1"
+    },
+    {
+        "name": "Cassa Operatore 2",
+        "cash_type": "CASSA_OPERATORE",
+        "saldo_teorico": 500.0,
+        "status": "libera",
+        "notes": "Cassa operatore postazione 2"
+    },
+    {
+        "name": "Cassa Operatore 3",
+        "cash_type": "CASSA_OPERATORE",
+        "saldo_teorico": 500.0,
+        "status": "libera",
+        "notes": "Cassa operatore postazione 3"
+    }
+]

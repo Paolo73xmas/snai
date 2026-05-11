@@ -1,0 +1,77 @@
+{
+    "title": "discrepancies",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "user_id": {
+            "type": "string",
+            "description": "User who reported"
+        },
+        "user_name": {
+            "type": "string",
+            "description": "User display name"
+        },
+        "user_role": {
+            "type": "string",
+            "description": "User role"
+        },
+        "shift_id": {
+            "type": "integer",
+            "description": "Related shift ID"
+        },
+        "cash_id": {
+            "type": "integer",
+            "description": "Related cash ID"
+        },
+        "cash_name": {
+            "type": "string",
+            "description": "Cash register name"
+        },
+        "tipo": {
+            "type": "string",
+            "description": "apertura or chiusura"
+        },
+        "saldo_teorico": {
+            "type": "number",
+            "description": "Theoretical balance"
+        },
+        "saldo_fisico": {
+            "type": "number",
+            "description": "Physical balance"
+        },
+        "differenza": {
+            "type": "number",
+            "description": "Difference"
+        },
+        "notes": {
+            "type": "string",
+            "description": "Mandatory notes"
+        },
+        "status": {
+            "type": "string",
+            "description": "da_verificare, verificata, approvata, contestata, chiusa"
+        },
+        "verificato_da": {
+            "type": "string",
+            "description": "Verified by user ID"
+        },
+        "verificato_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Verification timestamp"
+        }
+    },
+    "required": [
+        "id",
+        "user_id",
+        "shift_id",
+        "cash_id",
+        "tipo",
+        "saldo_teorico",
+        "saldo_fisico",
+        "differenza"
+    ]
+}

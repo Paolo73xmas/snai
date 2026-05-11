@@ -1,0 +1,32 @@
+{
+    "title": "betsmarts",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "codice": {
+            "type": "string",
+            "description": "BetSmart code"
+        },
+        "name": {
+            "type": "string",
+            "description": "BetSmart name"
+        },
+        "status": {
+            "type": "string",
+            "description": "attiva or non_attiva"
+        },
+        "notes": {
+            "type": "string",
+            "description": "Notes"
+        }
+    },
+    "required": [
+        "id",
+        "codice",
+        "name",
+        "status"
+    ]
+}

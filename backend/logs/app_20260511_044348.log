@@ -1,0 +1,1017 @@
+2026-05-11 04:43:48,533 - main - INFO - === Logging system initialized ===
+2026-05-11 04:43:48,534 - main - INFO - Log file: logs/app_20260511_044348.log
+2026-05-11 04:43:48,534 - main - INFO - Log level: INFO
+2026-05-11 04:43:48,534 - main - INFO - Timestamp: 20260511_044348
+2026-05-11 04:43:49,582 - main - INFO - Included router: routers.aihub.router
+2026-05-11 04:43:49,614 - main - INFO - Included router: routers.auth.router
+2026-05-11 04:43:49,666 - main - INFO - Included router: routers.betsmarts.router
+2026-05-11 04:43:49,789 - main - INFO - Included router: routers.cash_ops.router
+2026-05-11 04:43:49,844 - main - INFO - Included router: routers.cashes.router
+2026-05-11 04:43:49,904 - main - INFO - Included router: routers.discrepancies.router
+2026-05-11 04:43:49,912 - main - INFO - Included router: routers.health.router
+2026-05-11 04:43:50,109 - main - INFO - Included router: routers.movements.router
+2026-05-11 04:43:50,126 - main - INFO - Included router: routers.public_auth.router
+2026-05-11 04:43:50,151 - main - INFO - Included router: routers.settings.router
+2026-05-11 04:43:50,230 - main - INFO - Included router: routers.shifts.router
+2026-05-11 04:43:50,279 - main - INFO - Included router: routers.storage.router
+2026-05-11 04:43:50,295 - main - INFO - Included router: routers.user.router
+2026-05-11 04:43:50,352 - main - INFO - Included router: routers.user_profiles.router
+2026-05-11 04:43:50,408 - main - INFO - Included router: routers.vlts.router
+2026-05-11 04:43:50,410 - main - INFO - === Application startup initiated ===
+2026-05-11 04:43:50,411 - services.database - INFO - Ignore creating tables
+2026-05-11 04:43:50,412 - services.mock_data - INFO - Ignore initialize data
+2026-05-11 04:43:50,412 - services.auth - INFO - Ignore initialize admin
+2026-05-11 04:43:50,414 - main - INFO - === Application startup completed successfully ===
+2026-05-11 04:43:58,620 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-05-11 04:43:58,621 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-05-11 04:43:58,640 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:43:58,641 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:43:58,641 - core.database - WARNING - Database session maker not available, attempting lazy initialization...
+2026-05-11 04:43:58,641 - core.database - WARNING - Database not initialized, attempting lazy initialization...
+2026-05-11 04:43:58,641 - core.database - INFO - Starting database initialization...
+2026-05-11 04:43:58,641 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-05-11 04:43:58,641 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-05-11 04:43:58,643 - core.database - INFO - Creating async database engine...
+2026-05-11 04:43:58,643 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-05-11 04:43:58,697 - core.database - INFO - Database engine created successfully
+2026-05-11 04:43:58,697 - core.database - INFO - Creating async session maker...
+2026-05-11 04:43:58,697 - core.database - INFO - Async session maker created successfully
+2026-05-11 04:43:58,697 - core.database - INFO - Database connection initialized successfully
+2026-05-11 04:43:58,697 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-05-11 04:43:58,697 - core.database - INFO - 🔧 Starting table creation...
+2026-05-11 04:44:00,459 - core.database - INFO - Tables initialized successfully
+2026-05-11 04:44:00,460 - core.database - DEBUG - [DB_OP] Create tables completed in 1.7628s
+2026-05-11 04:44:00,524 - core.database - INFO - Lazy database initialization completed successfully
+2026-05-11 04:44:00,525 - core.database - DEBUG - [DB_OP] Database session created successfully in 1.8842s
+2026-05-11 04:44:01,045 - core.database - DEBUG - [DB_OP] Database session cleanup after 2.4041s
+2026-05-11 04:44:01,269 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:44:01,270 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:44:01,271 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 04:44:02,259 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.9886s
+2026-05-11 04:44:31,329 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:44:31,330 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:44:31,331 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-05-11 04:44:32,035 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7050s
+2026-05-11 04:45:06,874 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:45:06,875 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:45:06,876 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0012s
+2026-05-11 04:45:07,255 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3806s
+2026-05-11 04:45:07,444 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:45:07,446 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:45:07,446 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 04:45:08,147 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7012s
+2026-05-11 04:45:38,317 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:45:38,318 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:45:38,318 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0008s
+2026-05-11 04:45:39,021 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7031s
+2026-05-11 04:46:08,325 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:46:08,326 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:46:08,326 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 04:46:09,029 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7032s
+2026-05-11 04:46:38,329 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:46:38,329 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:46:38,330 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-05-11 04:46:39,037 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7073s
+2026-05-11 04:47:08,319 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:47:08,320 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:47:08,320 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 04:47:09,022 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7025s
+2026-05-11 04:47:38,332 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:47:38,333 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:47:38,333 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 04:47:39,036 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7032s
+2026-05-11 04:49:12,575 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:49:12,576 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:49:12,576 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 04:49:13,081 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5050s
+2026-05-11 04:50:19,755 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:50:19,755 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:50:19,756 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0007s
+2026-05-11 04:50:20,457 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7013s
+2026-05-11 04:51:17,608 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:51:17,609 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:51:17,610 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0008s
+2026-05-11 04:51:17,991 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3826s
+2026-05-11 04:51:18,207 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:51:18,208 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:51:18,208 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-05-11 04:51:18,909 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7010s
+2026-05-11 04:51:48,211 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:51:48,211 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:51:48,211 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 04:51:48,913 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7014s
+2026-05-11 04:52:18,216 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:52:18,217 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:52:18,217 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-05-11 04:52:18,923 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7064s
+2026-05-11 04:52:48,209 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:52:48,209 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:52:48,210 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 04:52:48,911 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7019s
+2026-05-11 04:53:09,611 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:53:09,612 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:53:09,612 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 04:53:09,992 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3806s
+2026-05-11 04:53:10,292 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:53:10,293 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:53:10,293 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 04:53:10,993 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7003s
+2026-05-11 04:53:40,325 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:53:40,326 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:53:40,326 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 04:53:41,027 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7015s
+2026-05-11 04:54:10,323 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:54:10,324 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:54:10,325 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0013s
+2026-05-11 04:54:11,037 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7131s
+2026-05-11 04:54:40,334 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:54:40,335 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:54:40,335 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 04:54:41,162 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.8275s
+2026-05-11 04:55:10,493 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:55:10,494 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:55:10,494 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 04:55:11,200 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7061s
+2026-05-11 04:55:41,336 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:55:41,336 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:55:41,337 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 04:55:42,037 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7002s
+2026-05-11 04:56:10,326 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:56:10,327 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:56:10,327 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 04:56:11,029 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7017s
+2026-05-11 04:56:40,334 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:56:40,334 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:56:40,335 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 04:56:41,037 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7030s
+2026-05-11 04:57:10,329 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:57:10,330 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:57:10,330 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 04:57:11,034 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7038s
+2026-05-11 04:57:40,323 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:57:40,324 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:57:40,324 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 04:57:41,027 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7029s
+2026-05-11 04:58:32,741 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:58:32,742 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:58:32,742 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-05-11 04:58:33,444 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7018s
+2026-05-11 04:58:55,507 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:58:55,508 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:58:55,509 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0009s
+2026-05-11 04:58:55,893 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3853s
+2026-05-11 04:58:56,095 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:58:56,098 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:58:56,098 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-05-11 04:58:56,799 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.7009s
+2026-05-11 04:59:26,337 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:59:26,337 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:59:26,337 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 04:59:27,037 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6999s
+2026-05-11 04:59:59,340 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 04:59:59,340 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 04:59:59,341 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 05:00:00,169 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.8284s
+2026-05-11 05:02:38,882 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 05:02:38,882 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 05:02:38,883 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-05-11 05:03:26,127 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 05:03:26,128 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 05:03:26,128 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 05:03:27,500 - core.database - ERROR - Database session error: connection was closed in the middle of operation
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/cash_ops.py", line 323, in get_dashboard
+    profile = await svc._get_or_create_profile(current_user.id, current_user.email, current_user.name or "")
+  File "/workspace/app/backend/services/cash_ops_service.py", line 27, in _get_or_create_profile
+    result = await self.db.execute(select(User_profiles).where(User_profiles.user_id == user_id))
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2239, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2108, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1187, in _connection_for_bind
+    conn = bind.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1353, in _checkout
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1350, in _checkout
+    fairy._connection_record.get_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 837, in get_connection
+    self.__connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 955, in connect
+    await_only(creator_fn(*arg, **kw)),
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 2443, in connect
+    return await connect_utils._connect(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1218, in _connect
+    conn = await _connect_addr(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1050, in _connect_addr
+    return await __connect_addr(params, False, *args)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1102, in __connect_addr
+    await connected
+asyncpg.exceptions.ConnectionDoesNotExistError: connection was closed in the middle of operation
+2026-05-11 05:03:27,534 - core.database - DEBUG - [DB_OP] Database session cleanup after 48.6514s
+2026-05-11 05:03:27,534 - core.database - ERROR - Failed to create database session: connection was closed in the middle of operation
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/cash_ops.py", line 323, in get_dashboard
+    profile = await svc._get_or_create_profile(current_user.id, current_user.email, current_user.name or "")
+  File "/workspace/app/backend/services/cash_ops_service.py", line 27, in _get_or_create_profile
+    result = await self.db.execute(select(User_profiles).where(User_profiles.user_id == user_id))
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2239, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2108, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1187, in _connection_for_bind
+    conn = bind.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1353, in _checkout
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1350, in _checkout
+    fairy._connection_record.get_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 837, in get_connection
+    self.__connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 955, in connect
+    await_only(creator_fn(*arg, **kw)),
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 2443, in connect
+    return await connect_utils._connect(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1218, in _connect
+    conn = await _connect_addr(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1050, in _connect_addr
+    return await __connect_addr(params, False, *args)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1102, in __connect_addr
+    await connected
+asyncpg.exceptions.ConnectionDoesNotExistError: connection was closed in the middle of operation
+2026-05-11 05:03:27,754 - main - ERROR - Exception: ConnectionDoesNotExistError: connection was closed in the middle of operation
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/middleware/cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/cash_ops.py", line 323, in get_dashboard
+    profile = await svc._get_or_create_profile(current_user.id, current_user.email, current_user.name or "")
+  File "/workspace/app/backend/services/cash_ops_service.py", line 27, in _get_or_create_profile
+    result = await self.db.execute(select(User_profiles).where(User_profiles.user_id == user_id))
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2239, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2108, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1187, in _connection_for_bind
+    conn = bind.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1353, in _checkout
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1350, in _checkout
+    fairy._connection_record.get_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 837, in get_connection
+    self.__connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 955, in connect
+    await_only(creator_fn(*arg, **kw)),
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 2443, in connect
+    return await connect_utils._connect(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1218, in _connect
+    conn = await _connect_addr(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1050, in _connect_addr
+    return await __connect_addr(params, False, *args)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1102, in __connect_addr
+    await connected
+asyncpg.exceptions.ConnectionDoesNotExistError: connection was closed in the middle of operation
+
+2026-05-11 05:03:35,937 - core.database - DEBUG - [DB_OP] Database session cleanup after 9.8089s
+2026-05-11 05:03:36,134 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 05:03:36,134 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 05:03:36,135 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0006s
+2026-05-11 05:03:52,763 - core.database - DEBUG - [DB_OP] Database session cleanup after 16.6290s
+2026-05-11 05:04:17,059 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 05:04:17,060 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 05:04:17,060 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-05-11 05:04:56,352 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 05:04:56,352 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 05:04:56,353 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 05:05:18,119 - core.database - DEBUG - [DB_OP] Database session cleanup after 21.7666s
+2026-05-11 05:05:28,900 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 05:05:28,900 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 05:05:28,901 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-05-11 05:05:56,332 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 05:05:56,332 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 05:05:56,333 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0006s
+2026-05-11 05:06:13,708 - core.database - ERROR - Database session error: 
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/cash_ops.py", line 323, in get_dashboard
+    profile = await svc._get_or_create_profile(current_user.id, current_user.email, current_user.name or "")
+  File "/workspace/app/backend/services/cash_ops_service.py", line 27, in _get_or_create_profile
+    result = await self.db.execute(select(User_profiles).where(User_profiles.user_id == user_id))
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2239, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2108, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1187, in _connection_for_bind
+    conn = bind.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 955, in connect
+    await_only(creator_fn(*arg, **kw)),
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 2443, in connect
+    return await connect_utils._connect(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1249, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1218, in _connect
+    conn = await _connect_addr(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1050, in _connect_addr
+    return await __connect_addr(params, False, *args)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1099, in __connect_addr
+    tr, pr = await connector
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 985, in _create_ssl_connection
+    new_tr = await loop.start_tls(
+  File "uvloop/loop.pyx", line 1639, in start_tls
+  File "uvloop/loop.pyx", line 1632, in uvloop.loop.Loop.start_tls
+  File "uvloop/sslproto.pyx", line 517, in uvloop.loop.SSLProtocol._on_handshake_complete
+ConnectionResetError
+2026-05-11 05:06:13,738 - core.database - DEBUG - [DB_OP] Database session cleanup after 17.4052s
+2026-05-11 05:06:13,738 - core.database - ERROR - Failed to create database session: 
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/cash_ops.py", line 323, in get_dashboard
+    profile = await svc._get_or_create_profile(current_user.id, current_user.email, current_user.name or "")
+  File "/workspace/app/backend/services/cash_ops_service.py", line 27, in _get_or_create_profile
+    result = await self.db.execute(select(User_profiles).where(User_profiles.user_id == user_id))
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2239, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2108, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1187, in _connection_for_bind
+    conn = bind.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 955, in connect
+    await_only(creator_fn(*arg, **kw)),
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 2443, in connect
+    return await connect_utils._connect(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1249, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1218, in _connect
+    conn = await _connect_addr(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1050, in _connect_addr
+    return await __connect_addr(params, False, *args)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1099, in __connect_addr
+    tr, pr = await connector
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 985, in _create_ssl_connection
+    new_tr = await loop.start_tls(
+  File "uvloop/loop.pyx", line 1639, in start_tls
+  File "uvloop/loop.pyx", line 1632, in uvloop.loop.Loop.start_tls
+  File "uvloop/sslproto.pyx", line 517, in uvloop.loop.SSLProtocol._on_handshake_complete
+ConnectionResetError
+2026-05-11 05:06:13,743 - main - ERROR - Exception: ConnectionResetError: 
+Traceback (most recent call last):
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/middleware/cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/cash_ops.py", line 323, in get_dashboard
+    profile = await svc._get_or_create_profile(current_user.id, current_user.email, current_user.name or "")
+  File "/workspace/app/backend/services/cash_ops_service.py", line 27, in _get_or_create_profile
+    result = await self.db.execute(select(User_profiles).where(User_profiles.user_id == user_id))
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2239, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2108, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1187, in _connection_for_bind
+    conn = bind.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 955, in connect
+    await_only(creator_fn(*arg, **kw)),
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 2443, in connect
+    return await connect_utils._connect(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1249, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1218, in _connect
+    conn = await _connect_addr(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1050, in _connect_addr
+    return await __connect_addr(params, False, *args)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1099, in __connect_addr
+    tr, pr = await connector
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 985, in _create_ssl_connection
+    new_tr = await loop.start_tls(
+  File "uvloop/loop.pyx", line 1639, in start_tls
+  File "uvloop/loop.pyx", line 1632, in uvloop.loop.Loop.start_tls
+  File "uvloop/sslproto.pyx", line 517, in uvloop.loop.SSLProtocol._on_handshake_complete
+ConnectionResetError
+
+2026-05-11 05:06:26,309 - core.auth - DEBUG - Authentication token validated for user hash: 6368b9a2
+2026-05-11 05:06:26,310 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-11 05:06:26,310 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-05-11 05:06:30,899 - core.database - DEBUG - [DB_OP] Database session cleanup after 133.8392s
+2026-05-11 05:07:23,902 - core.database - DEBUG - [DB_OP] Database session cleanup after 115.0012s
+2026-05-11 05:07:26,311 - core.database - ERROR - Database session error: 
+Traceback (most recent call last):
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 2443, in connect
+    return await connect_utils._connect(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1218, in _connect
+    conn = await _connect_addr(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1050, in _connect_addr
+    return await __connect_addr(params, False, *args)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1102, in __connect_addr
+    await connected
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/cash_ops.py", line 107, in get_user_profile
+    return await svc.get_user_profile(current_user.id, current_user.email, current_user.name or "")
+  File "/workspace/app/backend/services/cash_ops_service.py", line 84, in get_user_profile
+    profile = await self._get_or_create_profile(user_id, email, name)
+  File "/workspace/app/backend/services/cash_ops_service.py", line 27, in _get_or_create_profile
+    result = await self.db.execute(select(User_profiles).where(User_profiles.user_id == user_id))
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2239, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2108, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1187, in _connection_for_bind
+    conn = bind.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 955, in connect
+    await_only(creator_fn(*arg, **kw)),
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 2442, in connect
+    async with compat.timeout(timeout):
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/async_timeout/__init__.py", line 179, in __aexit__
+    self._do_exit(exc_type)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/async_timeout/__init__.py", line 265, in _do_exit
+    raise asyncio.TimeoutError
+asyncio.exceptions.TimeoutError
+2026-05-11 05:07:26,331 - core.database - DEBUG - [DB_OP] Database session cleanup after 60.0212s
+2026-05-11 05:07:26,331 - core.database - ERROR - Failed to create database session: 
+Traceback (most recent call last):
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 2443, in connect
+    return await connect_utils._connect(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1218, in _connect
+    conn = await _connect_addr(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1050, in _connect_addr
+    return await __connect_addr(params, False, *args)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1102, in __connect_addr
+    await connected
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/cash_ops.py", line 107, in get_user_profile
+    return await svc.get_user_profile(current_user.id, current_user.email, current_user.name or "")
+  File "/workspace/app/backend/services/cash_ops_service.py", line 84, in get_user_profile
+    profile = await self._get_or_create_profile(user_id, email, name)
+  File "/workspace/app/backend/services/cash_ops_service.py", line 27, in _get_or_create_profile
+    result = await self.db.execute(select(User_profiles).where(User_profiles.user_id == user_id))
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2239, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2108, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1187, in _connection_for_bind
+    conn = bind.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 955, in connect
+    await_only(creator_fn(*arg, **kw)),
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 2442, in connect
+    async with compat.timeout(timeout):
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/async_timeout/__init__.py", line 179, in __aexit__
+    self._do_exit(exc_type)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/async_timeout/__init__.py", line 265, in _do_exit
+    raise asyncio.TimeoutError
+asyncio.exceptions.TimeoutError
+2026-05-11 05:07:26,335 - main - ERROR - Exception: TimeoutError: 
+Traceback (most recent call last):
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 2443, in connect
+    return await connect_utils._connect(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1218, in _connect
+    conn = await _connect_addr(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1050, in _connect_addr
+    return await __connect_addr(params, False, *args)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 1102, in __connect_addr
+    await connected
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/middleware/cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/cash_ops.py", line 107, in get_user_profile
+    return await svc.get_user_profile(current_user.id, current_user.email, current_user.name or "")
+  File "/workspace/app/backend/services/cash_ops_service.py", line 84, in get_user_profile
+    profile = await self._get_or_create_profile(user_id, email, name)
+  File "/workspace/app/backend/services/cash_ops_service.py", line 27, in _get_or_create_profile
+    result = await self.db.execute(select(User_profiles).where(User_profiles.user_id == user_id))
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2239, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2108, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1187, in _connection_for_bind
+    conn = bind.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 955, in connect
+    await_only(creator_fn(*arg, **kw)),
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 2442, in connect
+    async with compat.timeout(timeout):
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/async_timeout/__init__.py", line 179, in __aexit__
+    self._do_exit(exc_type)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/async_timeout/__init__.py", line 265, in _do_exit
+    raise asyncio.TimeoutError
+asyncio.exceptions.TimeoutError
+
+2026-05-11 05:07:31,376 - services.database - DEBUG - [DB_OP] Starting database close
+2026-05-11 05:07:31,508 - core.database - INFO - Database connection closed and engine disposed
+2026-05-11 05:07:31,511 - services.database - INFO - Database connections closed
+2026-05-11 05:07:31,511 - services.database - DEBUG - [DB_OP] Database close completed in 0.1354s

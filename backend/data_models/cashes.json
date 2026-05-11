@@ -1,0 +1,53 @@
+{
+    "title": "cashes",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "name": {
+            "type": "string",
+            "description": "Cash register name"
+        },
+        "cash_type": {
+            "type": "string",
+            "description": "CASSA_CENTRALE, CASSA_OPERATORE, BANCA"
+        },
+        "saldo_teorico": {
+            "type": "number",
+            "description": "Theoretical balance"
+        },
+        "status": {
+            "type": "string",
+            "description": "libera, in_uso, bloccata, da_verificare, disattivata"
+        },
+        "current_operator_id": {
+            "type": "string",
+            "description": "Current operator user ID, null if free"
+        },
+        "current_shift_id": {
+            "type": "integer",
+            "description": "Current shift ID, null if free"
+        },
+        "notes": {
+            "type": "string",
+            "description": "Notes"
+        },
+        "last_physical_balance": {
+            "type": "number",
+            "description": "Last declared physical balance"
+        },
+        "last_operator_name": {
+            "type": "string",
+            "description": "Last operator name"
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "cash_type",
+        "saldo_teorico",
+        "status"
+    ]
+}

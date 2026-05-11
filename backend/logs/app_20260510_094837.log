@@ -1,0 +1,73 @@
+2026-05-10 09:48:37,557 - main - INFO - === Logging system initialized ===
+2026-05-10 09:48:37,557 - main - INFO - Log file: logs/app_20260510_094837.log
+2026-05-10 09:48:37,557 - main - INFO - Log level: INFO
+2026-05-10 09:48:37,557 - main - INFO - Timestamp: 20260510_094837
+2026-05-10 09:48:38,472 - main - INFO - Included router: routers.aihub.router
+2026-05-10 09:48:38,497 - main - INFO - Included router: routers.auth.router
+2026-05-10 09:48:38,543 - main - INFO - Included router: routers.betsmarts.router
+2026-05-10 09:48:38,628 - main - INFO - Included router: routers.cash_ops.router
+2026-05-10 09:48:38,680 - main - INFO - Included router: routers.cashes.router
+2026-05-10 09:48:38,739 - main - INFO - Included router: routers.discrepancies.router
+2026-05-10 09:48:38,743 - main - INFO - Included router: routers.health.router
+2026-05-10 09:48:38,968 - main - INFO - Included router: routers.movements.router
+2026-05-10 09:48:38,988 - main - INFO - Included router: routers.public_auth.router
+2026-05-10 09:48:39,009 - main - INFO - Included router: routers.settings.router
+2026-05-10 09:48:39,108 - main - INFO - Included router: routers.shifts.router
+2026-05-10 09:48:39,147 - main - INFO - Included router: routers.storage.router
+2026-05-10 09:48:39,162 - main - INFO - Included router: routers.user.router
+2026-05-10 09:48:39,208 - main - INFO - Included router: routers.user_profiles.router
+2026-05-10 09:48:39,247 - main - INFO - Included router: routers.vlts.router
+2026-05-10 09:48:39,249 - main - INFO - === Application startup initiated ===
+2026-05-10 09:48:39,249 - services.database - INFO - Ignore creating tables
+2026-05-10 09:48:39,250 - services.mock_data - INFO - Ignore initialize data
+2026-05-10 09:48:39,250 - services.auth - INFO - Ignore initialize admin
+2026-05-10 09:48:39,250 - main - INFO - === Application startup completed successfully ===
+2026-05-10 09:51:06,136 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-05-10 09:51:06,136 - core.database - WARNING - Database session maker not available, attempting lazy initialization...
+2026-05-10 09:51:06,138 - core.database - WARNING - Database not initialized, attempting lazy initialization...
+2026-05-10 09:51:06,138 - core.database - INFO - Starting database initialization...
+2026-05-10 09:51:06,138 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-05-10 09:51:06,139 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-05-10 09:51:06,140 - core.database - INFO - Creating async database engine...
+2026-05-10 09:51:06,140 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-05-10 09:51:06,223 - core.database - INFO - Database engine created successfully
+2026-05-10 09:51:06,224 - core.database - INFO - Creating async session maker...
+2026-05-10 09:51:06,224 - core.database - INFO - Async session maker created successfully
+2026-05-10 09:51:06,224 - core.database - INFO - Database connection initialized successfully
+2026-05-10 09:51:06,224 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-05-10 09:51:06,225 - core.database - INFO - 🔧 Starting table creation...
+2026-05-10 09:51:07,976 - core.database - INFO - Tables initialized successfully
+2026-05-10 09:51:07,977 - core.database - DEBUG - [DB_OP] Create tables completed in 1.7525s
+2026-05-10 09:51:08,040 - core.database - INFO - Lazy database initialization completed successfully
+2026-05-10 09:51:08,041 - core.database - DEBUG - [DB_OP] Database session created successfully in 1.9052s
+2026-05-10 09:51:08,564 - core.database - ERROR - Database session error: 401: Credenziali non valide
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/auth.py", line 351, in login_password
+    raise HTTPException(status_code=401, detail="Credenziali non valide")
+fastapi.exceptions.HTTPException: 401: Credenziali non valide
+2026-05-10 09:51:08,586 - core.database - DEBUG - [DB_OP] Database session cleanup after 2.4504s
+2026-05-10 09:51:08,650 - core.database - ERROR - Failed to create database session: 401: Credenziali non valide
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/abb370935ea34647ae1e0e3402d49c13/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/auth.py", line 351, in login_password
+    raise HTTPException(status_code=401, detail="Credenziali non valide")
+fastapi.exceptions.HTTPException: 401: Credenziali non valide
+2026-05-10 09:52:20,907 - services.database - DEBUG - [DB_OP] Starting database close
+2026-05-10 09:52:20,973 - core.database - INFO - Database connection closed and engine disposed
+2026-05-10 09:52:20,974 - services.database - INFO - Database connections closed
+2026-05-10 09:52:20,974 - services.database - DEBUG - [DB_OP] Database close completed in 0.0674s
