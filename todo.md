@@ -40,5 +40,6 @@
 - [x] Auto-assign admin role for admin@trezzanosnai.it on first login (cash_ops_service.py)
 - [x] Implement username/password login (public endpoint + JWT token)
 - [x] Fix password verification and ensure admin password_hash is set on startup
-- [x] Configure Vite proxy to point to correct backend port (8002)
+- [x] Configure Vite proxy to point to correct backend port (8000)
+- [x] Update CORS to allow localhost:3002 (actual dev server port)
 - [x] Verify end-to-end login flow (frontend → proxy → backend → JWT response)

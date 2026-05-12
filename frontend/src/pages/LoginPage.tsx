@@ -14,26 +14,36 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('[LOGIN PAGE] === Form submitted ===');
+    console.log('[LOGIN PAGE] Username:', username);
+    console.log('[LOGIN PAGE] Password length:', password.length);
 
     if (!username.trim() || !password.trim()) {
+      console.warn('[LOGIN PAGE] ⚠️ Empty fields');
       toast.error('Inserisci username e password');
       return;
     }
 
     setLoading(true);
     try {
+      console.log('[LOGIN PAGE] Calling supabaseLogin...');
       const result = await supabaseLogin(username, password);
+      console.log('[LOGIN PAGE] supabaseLogin result:', { success: result.success, error: result.error, hasProfile: !!result.profile });
 
       if (result.success) {
+        console.log('[LOGIN PAGE] ✅ Login successful! Showing toast...');
         toast.success('Accesso effettuato!');
         // The store is already updated by supabaseLogin, React will re-render
       } else {
+        console.error('[LOGIN PAGE] ❌ Login failed:', result.error);
         toast.error(result.error || 'Credenziali non valide');
       }
     } catch (err: any) {
+      console.error('[LOGIN PAGE] ❌ Exception during login:', err);
       toast.error(err.message || 'Errore durante il login');
     } finally {
       setLoading(false);
+      console.log('[LOGIN PAGE] === Form submission complete ===');
     }
   };
 
