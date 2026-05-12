@@ -547,11 +547,11 @@ async def get_closed_shifts(
         try:
             storage = StorageService()
             if s.receipt_photo_key:
-                req = FileUpDownRequest(bucket_name="receipts", object_key=s.receipt_photo_key)
+                req = FileUpDownRequest(bucket_name="shift-receipts", object_key=s.receipt_photo_key)
                 resp = await storage.create_download_url(req)
                 item["receipt_photo_url"] = resp.download_url
             if s.pos_photo_key:
-                req = FileUpDownRequest(bucket_name="receipts", object_key=s.pos_photo_key)
+                req = FileUpDownRequest(bucket_name="shift-receipts", object_key=s.pos_photo_key)
                 resp = await storage.create_download_url(req)
                 item["pos_photo_url"] = resp.download_url
         except Exception as e:
