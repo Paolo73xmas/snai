@@ -2,9 +2,18 @@ import { useEffect, useState, useCallback } from 'react';
 import { cashApi } from '@/lib/auth';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { RefreshCw, Clock, User, Image, X, AlertTriangle, ChevronDown, ChevronUp, Camera } from 'lucide-react';
+import { RefreshCw, Clock, User, Image, X, AlertTriangle, ChevronDown, ChevronUp, Camera, ArrowUpCircle, ArrowDownCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+
+interface OperazioneData {
+  id: number;
+  tipo: 'incasso' | 'pagamento';
+  categoria: string;
+  importo: number;
+  note: string;
+  created_at: string | null;
+}
 
 interface ClosedShiftData {
   id: number;
@@ -30,6 +39,7 @@ interface ClosedShiftData {
   totale_svuotamenti: number | null;
   receipt_photo_url: string | null;
   pos_photo_url: string | null;
+  operazioni: OperazioneData[];
 }
 
 function formatCurrency(v: number | null | undefined) {
@@ -46,6 +56,31 @@ function formatDateTime(iso: string | null) {
     hour: '2-digit',
     minute: '2-digit',
   });
+}
+
+function formatTime(iso: string | null) {
+  if (!iso) return '-';
+  return new Date(iso).toLocaleString('it-IT', {
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+}
+
+const CATEGORIA_LABELS: Record<string, string> = {
+  scommesse_sportive: 'Scommesse Sportive',
+  scommesse_ippiche: 'Scommesse Ippiche',
+  scommesse_virtuali: 'Scommesse Virtuali',
+  ricariche: 'Ricariche',
+  paymat: 'Paymat',
+  voucher_betsmart: 'Voucher BetSmart',
+  vlt: 'VLT',
+  prelievi_web: 'Prelievi Web',
+  annulli: 'Annulli',
+  pos: 'POS',
+};
+
+function getCategoriaLabel(cat: string): string {
+  return CATEGORIA_LABELS[cat] || cat.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 }
 
 export default function ClosedShiftsPage() {
@@ -109,6 +144,8 @@ export default function ClosedShiftsPage() {
           {closedShifts.map((s) => {
             const isExpanded = expandedId === s.id;
             const hasPhotos = !!(s.receipt_photo_url || s.pos_photo_url);
+            const incassi = (s.operazioni || []).filter(op => op.tipo === 'incasso');
+            const pagamenti = (s.operazioni || []).filter(op => op.tipo === 'pagamento');
 
             return (
               <Card key={s.id} className="material-surface overflow-hidden">
@@ -170,7 +207,7 @@ export default function ClosedShiftsPage() {
                 <div
                   className={cn(
                     'overflow-hidden transition-all duration-300 ease-in-out',
-                    isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+                    isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
                   )}
                 >
                   <div className="border-t border-border px-6 py-4 space-y-4 bg-muted/30">
@@ -228,6 +265,97 @@ export default function ClosedShiftsPage() {
                         )}
                       </div>
                     </div>
+
+                    {/* Detailed Operations - Incassi */}
+                    {incassi.length > 0 && (
+                      <div>
+                        <h4 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <ArrowDownCircle className="w-4 h-4 text-green-600" />
+                          Dettaglio Incassi ({incassi.length})
+                        </h4>
+                        <div className="bg-background rounded-xl border border-border overflow-hidden">
+                          <table className="w-full text-sm">
+                            <thead>
+                              <tr className="border-b border-border bg-muted/50">
+                                <th className="text-left px-3 py-2 text-xs font-medium text-muted-foreground">Categoria</th>
+                                <th className="text-right px-3 py-2 text-xs font-medium text-muted-foreground">Importo</th>
+                                <th className="text-left px-3 py-2 text-xs font-medium text-muted-foreground hidden sm:table-cell">Ora</th>
+                                <th className="text-left px-3 py-2 text-xs font-medium text-muted-foreground hidden md:table-cell">Note</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {incassi.map((op) => (
+                                <tr key={op.id} className="border-b border-border/50 last:border-0">
+                                  <td className="px-3 py-2 font-medium">{getCategoriaLabel(op.categoria)}</td>
+                                  <td className="px-3 py-2 text-right text-green-600 font-semibold">{formatCurrency(op.importo)}</td>
+                                  <td className="px-3 py-2 text-muted-foreground hidden sm:table-cell">{formatTime(op.created_at)}</td>
+                                  <td className="px-3 py-2 text-muted-foreground text-xs hidden md:table-cell truncate max-w-[150px]">{op.note || '-'}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                            <tfoot>
+                              <tr className="bg-green-50 dark:bg-green-950/20">
+                                <td className="px-3 py-2 font-semibold text-xs">TOTALE INCASSI</td>
+                                <td className="px-3 py-2 text-right font-bold text-green-600">
+                                  {formatCurrency(incassi.reduce((sum, op) => sum + op.importo, 0))}
+                                </td>
+                                <td className="hidden sm:table-cell"></td>
+                                <td className="hidden md:table-cell"></td>
+                              </tr>
+                            </tfoot>
+                          </table>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Detailed Operations - Pagamenti */}
+                    {pagamenti.length > 0 && (
+                      <div>
+                        <h4 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <ArrowUpCircle className="w-4 h-4 text-red-600" />
+                          Dettaglio Pagamenti ({pagamenti.length})
+                        </h4>
+                        <div className="bg-background rounded-xl border border-border overflow-hidden">
+                          <table className="w-full text-sm">
+                            <thead>
+                              <tr className="border-b border-border bg-muted/50">
+                                <th className="text-left px-3 py-2 text-xs font-medium text-muted-foreground">Categoria</th>
+                                <th className="text-right px-3 py-2 text-xs font-medium text-muted-foreground">Importo</th>
+                                <th className="text-left px-3 py-2 text-xs font-medium text-muted-foreground hidden sm:table-cell">Ora</th>
+                                <th className="text-left px-3 py-2 text-xs font-medium text-muted-foreground hidden md:table-cell">Note</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {pagamenti.map((op) => (
+                                <tr key={op.id} className="border-b border-border/50 last:border-0">
+                                  <td className="px-3 py-2 font-medium">{getCategoriaLabel(op.categoria)}</td>
+                                  <td className="px-3 py-2 text-right text-red-600 font-semibold">{formatCurrency(op.importo)}</td>
+                                  <td className="px-3 py-2 text-muted-foreground hidden sm:table-cell">{formatTime(op.created_at)}</td>
+                                  <td className="px-3 py-2 text-muted-foreground text-xs hidden md:table-cell truncate max-w-[150px]">{op.note || '-'}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                            <tfoot>
+                              <tr className="bg-red-50 dark:bg-red-950/20">
+                                <td className="px-3 py-2 font-semibold text-xs">TOTALE PAGAMENTI</td>
+                                <td className="px-3 py-2 text-right font-bold text-red-600">
+                                  {formatCurrency(pagamenti.reduce((sum, op) => sum + op.importo, 0))}
+                                </td>
+                                <td className="hidden sm:table-cell"></td>
+                                <td className="hidden md:table-cell"></td>
+                              </tr>
+                            </tfoot>
+                          </table>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* No operations message */}
+                    {incassi.length === 0 && pagamenti.length === 0 && (
+                      <div className="text-center py-4 bg-background rounded-xl border border-dashed border-border">
+                        <p className="text-sm text-muted-foreground">Nessuna operazione registrata per questo turno</p>
+                      </div>
+                    )}
 
                     {/* Notes */}
                     {s.note_chiusura && (

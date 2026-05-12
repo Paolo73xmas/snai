@@ -497,8 +497,9 @@ async def get_closed_shifts(
     current_user: UserResponse = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    """Get closed shifts with photo download URLs for admin view."""
+    """Get closed shifts with photo download URLs and detailed operations for admin view."""
     from models.shifts import Shifts
+    from models.movements import Movements
     from sqlalchemy import select, or_
 
     # Only admin can view all closed shifts
@@ -515,8 +516,56 @@ async def get_closed_shifts(
     from services.storage import StorageService
     from schemas.storage import FileUpDownRequest
 
+    # Collect shift IDs to batch-query movements
+    shift_ids = [s.id for s in shifts]
+
+    # Query all movements for these shifts (only income/payment types)
+    incasso_types = [
+        "INCASSO_SCOMMESSE_SPORTIVE", "INCASSO_SCOMMESSE_IPPICHE",
+        "INCASSO_SCOMMESSE_VIRTUALI", "INCASSO_RICARICHE",
+        "INCASSO_PAYMAT", "INCASSO_VOUCHER_BETSMART",
+    ]
+    pagamento_types = [
+        "PAGAMENTO_SCOMMESSE_SPORTIVE", "PAGAMENTO_SCOMMESSE_IPPICHE",
+        "PAGAMENTO_SCOMMESSE_VIRTUALI", "PAGAMENTO_VLT",
+        "PAGAMENTO_PRELIEVI_WEB", "PAGAMENTO_PAYMAT",
+        "PAGAMENTO_ANNULLI", "PAGAMENTO_POS",
+    ]
+    all_op_types = incasso_types + pagamento_types
+
+    movements_by_shift: dict[int, list] = {sid: [] for sid in shift_ids}
+    if shift_ids:
+        mov_result = await db.execute(
+            select(Movements)
+            .where(
+                Movements.shift_id.in_(shift_ids),
+                Movements.tipo_movimento.in_(all_op_types),
+            )
+            .order_by(Movements.created_at.asc())
+        )
+        all_movs = mov_result.scalars().all()
+        for m in all_movs:
+            if m.shift_id in movements_by_shift:
+                movements_by_shift[m.shift_id].append(m)
+
     items = []
     for s in shifts:
+        # Build operations list for this shift
+        operazioni = []
+        for m in movements_by_shift.get(s.id, []):
+            is_incasso = m.tipo_movimento in incasso_types
+            # Extract category from tipo_movimento (e.g. INCASSO_SCOMMESSE_SPORTIVE -> scommesse_sportive)
+            prefix = "INCASSO_" if is_incasso else "PAGAMENTO_"
+            categoria = m.tipo_movimento.replace(prefix, "").lower()
+            operazioni.append({
+                "id": m.id,
+                "tipo": "incasso" if is_incasso else "pagamento",
+                "categoria": categoria,
+                "importo": m.importo,
+                "note": m.notes or "",
+                "created_at": m.created_at.isoformat() if m.created_at else None,
+            })
+
         item = {
             "id": s.id,
             "user_name": s.user_name,
@@ -541,6 +590,7 @@ async def get_closed_shifts(
             "totale_svuotamenti": s.totale_svuotamenti,
             "receipt_photo_url": None,
             "pos_photo_url": None,
+            "operazioni": operazioni,
         }
 
         # Generate download URLs for photos if keys exist
