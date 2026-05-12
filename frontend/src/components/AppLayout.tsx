@@ -15,6 +15,7 @@ import {
   Tv,
   Landmark,
   Clock,
+  ClockArrowDown,
   BarChart3,
   Vault,
 } from 'lucide-react';
@@ -39,6 +40,7 @@ const navItems: NavItem[] = [
   { icon: Landmark, label: 'Banca', path: '/banca', roles: ['admin'] },
   { icon: History, label: 'Movimenti', path: '/movimenti', roles: ['admin', 'operator', 'operator_plus'] },
   { icon: Clock, label: 'Turni', path: '/turni', roles: ['admin'] },
+  { icon: ClockArrowDown, label: 'Turni Chiusi', path: '/turni-chiusi', roles: ['admin', 'operator', 'operator_plus'] },
   { icon: AlertTriangle, label: 'Discrepanze', path: '/discrepanze', roles: ['admin'] },
   { icon: Banknote, label: 'Casse', path: '/casse', roles: ['admin'] },
   { icon: BarChart3, label: 'Report', path: '/report', roles: ['admin'] },

@@ -23,6 +23,8 @@ class OpenShiftReq(BaseModel):
 class CloseShiftReq(BaseModel):
     saldo_fisico: float
     note: str = ""
+    receipt_photo_key: str = ""
+    pos_photo_key: str = ""
 
 class RecordIncomeReq(BaseModel):
     categoria: str
@@ -32,6 +34,15 @@ class RecordIncomeReq(BaseModel):
 class RecordPaymentReq(BaseModel):
     categoria: str
     importo: float
+    note: str = ""
+
+class BatchOperationItem(BaseModel):
+    tipo: str  # "incasso" or "pagamento"
+    categoria: str
+    importo: float
+
+class RecordBatchReq(BaseModel):
+    operazioni: list[BatchOperationItem]
     note: str = ""
 
 class SovvenzioneReq(BaseModel):
@@ -76,6 +87,9 @@ class SetRoleReq(BaseModel):
     target_user_id: str
     role: str
 
+class ToggleSuspensionReq(BaseModel):
+    target_user_id: str
+
 class VerifyDiscrepancyReq(BaseModel):
     disc_id: int
     new_status: str
@@ -95,6 +109,10 @@ class CreateUserReq(BaseModel):
     username: str = ""
     ruolo: str = "operator"
     password: str = ""
+
+class UploadReceiptUrlReq(BaseModel):
+    bucket_name: str
+    object_key: str
 
 
 # ── Endpoints ───────────────────────────────────────────────────
@@ -129,6 +147,19 @@ async def set_user_role(
         if profile.ruolo != "admin":
             raise HTTPException(status_code=403, detail="Solo Admin può cambiare ruoli")
         return await svc.set_user_role(data.target_user_id, data.role, profile)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.post("/toggle-suspension")
+async def toggle_suspension(
+    data: ToggleSuspensionReq,
+    current_user: UserResponse = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    svc = CashOpsService(db)
+    try:
+        return await svc.toggle_user_suspension(data.target_user_id, current_user.id)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
@@ -179,7 +210,13 @@ async def close_shift(
 ):
     svc = CashOpsService(db)
     try:
-        return await svc.close_shift(current_user.id, data.saldo_fisico, data.note)
+        return await svc.close_shift(
+            current_user.id,
+            data.saldo_fisico,
+            data.note,
+            receipt_photo_key=data.receipt_photo_key,
+            pos_photo_key=data.pos_photo_key,
+        )
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
@@ -208,6 +245,31 @@ async def record_payment(
         return await svc.record_payment(current_user.id, data.categoria, data.importo, data.note)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.post("/record-batch")
+async def record_batch(
+    data: RecordBatchReq,
+    current_user: UserResponse = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Record multiple income/payment operations in a single batch."""
+    svc = CashOpsService(db)
+    results = []
+    errors = []
+    for op in data.operazioni:
+        try:
+            if op.tipo == "incasso":
+                res = await svc.record_income(current_user.id, op.categoria, op.importo, data.note)
+            elif op.tipo == "pagamento":
+                res = await svc.record_payment(current_user.id, op.categoria, op.importo, data.note)
+            else:
+                errors.append({"categoria": op.categoria, "error": f"Tipo non valido: {op.tipo}"})
+                continue
+            results.append({"tipo": op.tipo, "categoria": op.categoria, "success": True})
+        except ValueError as e:
+            errors.append({"tipo": op.tipo, "categoria": op.categoria, "error": str(e)})
+    return {"success": len(errors) == 0, "recorded": len(results), "errors": errors}
 
 
 @router.post("/sovvenzione")
@@ -407,3 +469,94 @@ async def get_all_betsmarts(
     result = await db.execute(select(Betsmarts).where(Betsmarts.status == "attiva").order_by(Betsmarts.id))
     bss = result.scalars().all()
     return [{"id": b.id, "codice": b.codice, "name": b.name} for b in bss]
+
+
+@router.post("/upload-receipt-url")
+async def upload_receipt_url(
+    data: UploadReceiptUrlReq,
+    current_user: UserResponse = Depends(get_current_user),
+):
+    """Get a presigned upload URL for receipt photos."""
+    from services.storage import StorageService
+    from schemas.storage import FileUpDownRequest
+
+    try:
+        service = StorageService()
+        request = FileUpDownRequest(bucket_name=data.bucket_name, object_key=data.object_key)
+        result = await service.create_upload_url(request)
+        return {"upload_url": result.upload_url}
+    except Exception as e:
+        logger.error(f"Failed to generate receipt upload URL: {e}")
+        raise HTTPException(status_code=500, detail=f"Errore generazione URL upload: {e}")
+
+
+@router.get("/closed-shifts")
+async def get_closed_shifts(
+    skip: int = 0,
+    limit: int = 50,
+    current_user: UserResponse = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Get closed shifts with photo download URLs for admin view."""
+    from models.shifts import Shifts
+    from sqlalchemy import select, or_
+
+    # Only admin can view all closed shifts
+    result = await db.execute(
+        select(Shifts)
+        .where(or_(Shifts.status == "chiuso", Shifts.status == "chiuso_con_discrepanza"))
+        .order_by(Shifts.closed_at.desc())
+        .offset(skip)
+        .limit(limit)
+    )
+    shifts = result.scalars().all()
+
+    # Generate download URLs for photos
+    from services.storage import StorageService
+    from schemas.storage import FileUpDownRequest
+
+    items = []
+    for s in shifts:
+        item = {
+            "id": s.id,
+            "user_name": s.user_name,
+            "user_role": s.user_role,
+            "cash_name": s.cash_name,
+            "cash_id": s.cash_id,
+            "opened_at": s.opened_at.isoformat() if s.opened_at else None,
+            "closed_at": s.closed_at.isoformat() if s.closed_at else None,
+            "saldo_teorico_apertura": s.saldo_teorico_apertura,
+            "saldo_fisico_apertura": s.saldo_fisico_apertura,
+            "discrepanza_apertura": s.discrepanza_apertura,
+            "note_apertura": s.note_apertura,
+            "saldo_teorico_chiusura": s.saldo_teorico_chiusura,
+            "saldo_fisico_chiusura": s.saldo_fisico_chiusura,
+            "discrepanza_chiusura": s.discrepanza_chiusura,
+            "note_chiusura": s.note_chiusura,
+            "status": s.status,
+            "totale_incassi": s.totale_incassi,
+            "totale_pagamenti": s.totale_pagamenti,
+            "totale_sovvenzioni": s.totale_sovvenzioni,
+            "totale_restituzioni": s.totale_restituzioni,
+            "totale_svuotamenti": s.totale_svuotamenti,
+            "receipt_photo_url": None,
+            "pos_photo_url": None,
+        }
+
+        # Generate download URLs for photos if keys exist
+        try:
+            storage = StorageService()
+            if s.receipt_photo_key:
+                req = FileUpDownRequest(bucket_name="receipts", object_key=s.receipt_photo_key)
+                resp = await storage.create_download_url(req)
+                item["receipt_photo_url"] = resp.download_url
+            if s.pos_photo_key:
+                req = FileUpDownRequest(bucket_name="receipts", object_key=s.pos_photo_key)
+                resp = await storage.create_download_url(req)
+                item["pos_photo_url"] = resp.download_url
+        except Exception as e:
+            logger.warning(f"Failed to get photo URLs for shift {s.id}: {e}")
+
+        items.append(item)
+
+    return {"items": items, "total": len(items)}

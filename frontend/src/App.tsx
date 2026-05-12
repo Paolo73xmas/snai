@@ -18,6 +18,7 @@ import VltPage from './pages/VltPage';
 import BetSmartPage from './pages/BetSmartPage';
 import BankPage from './pages/BankPage';
 import ShiftsPage from './pages/ShiftsPage';
+import ClosedShiftsPage from './pages/ClosedShiftsPage';
 import ReportsPage from './pages/ReportsPage';
 import CentralCashPage from './pages/CentralCashPage';
 import LoginPage from './pages/LoginPage';
@@ -44,6 +45,7 @@ function AuthenticatedApp() {
         {isAdmin && <Route path="/banca" element={<BankPage />} />}
         <Route path="/movimenti" element={<MovementsPage />} />
         {isAdmin && <Route path="/turni" element={<ShiftsPage />} />}
+        <Route path="/turni-chiusi" element={<ClosedShiftsPage />} />
         {isAdmin && <Route path="/discrepanze" element={<DiscrepanciesPage />} />}
         {isAdmin && <Route path="/casse" element={<CashesPage />} />}
         {isAdmin && <Route path="/report" element={<ReportsPage />} />}

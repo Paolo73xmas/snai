@@ -43,3 +43,9 @@
 - [x] Configure Vite proxy to point to correct backend port (8000)
 - [x] Update CORS to allow localhost:3002 (actual dev server port)
 - [x] Verify end-to-end login flow (frontend → proxy → backend → JWT response)
+- [x] Add receipt photo capture/upload to shift closure (camera + gallery, thumbnail preview, required before closing)
+- [x] Implement "Turni Chiusi" section with closed shifts list, photo thumbnails, lightbox, and discrepancy badges
+- [x] Backend endpoint for closed shifts with photo download URLs (/closed-shifts)
+- [x] User suspension/reactivation feature (backend + frontend)
+- [x] Add "Salva Tutto" button to OperatorPage (batch save all incomes/payments in one operation)
+- [x] Backend /record-batch endpoint for batch operations

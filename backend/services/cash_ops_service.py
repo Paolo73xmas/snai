@@ -83,6 +83,8 @@ class CashOpsService:
     async def get_user_profile(self, user_id: str, email: str = "", name: str = "") -> Dict[str, Any]:
         profile = await self._get_or_create_profile(user_id, email, name)
         await self.db.commit()
+        if profile.status == "sospeso":
+            raise ValueError("Account sospeso. Contatta l'amministratore.")
         return {
             "id": profile.id,
             "user_id": profile.user_id,
@@ -112,6 +114,43 @@ class CashOpsService:
         )
         await self.db.commit()
         return {"success": True, "message": f"Role updated to {role}"}
+
+    async def toggle_user_suspension(self, target_user_id: str, admin_user_id: str) -> Dict[str, Any]:
+        """Toggle user suspension status. Only admin can do this."""
+        admin_result = await self.db.execute(select(User_profiles).where(User_profiles.user_id == admin_user_id))
+        admin_profile = admin_result.scalars().first()
+        if not admin_profile or admin_profile.ruolo != "admin":
+            raise ValueError("Solo Admin può sospendere/riattivare utenti")
+
+        result = await self.db.execute(select(User_profiles).where(User_profiles.user_id == target_user_id))
+        target = result.scalars().first()
+        if not target:
+            raise ValueError("Profilo utente non trovato")
+
+        # Don't allow suspending yourself
+        if target.user_id == admin_user_id:
+            raise ValueError("Non puoi sospendere il tuo stesso account")
+
+        # Toggle status
+        if target.status == "sospeso":
+            target.status = "attivo"
+            action = "riattivato"
+        else:
+            target.status = "sospeso"
+            action = "sospeso"
+
+        await self.db.flush()
+        await self._create_movement(
+            user_id=admin_user_id,
+            user_name=self._display_name(admin_profile),
+            user_role=admin_profile.ruolo,
+            tipo_movimento="MODIFICA_UTENTE",
+            importo=0,
+            causale=f"Utente {self._display_name(target)} {action}",
+            status="registrato",
+        )
+        await self.db.commit()
+        return {"success": True, "new_status": target.status, "message": f"Utente {action}"}
 
     async def get_all_profiles(self) -> List[Dict[str, Any]]:
         result = await self.db.execute(select(User_profiles).order_by(User_profiles.id))
@@ -307,7 +346,7 @@ class CashOpsService:
         return {"success": True, "shift_id": shift.id, "discrepanza": discrepanza}
 
     # ── close shift ─────────────────────────────────────────────
-    async def close_shift(self, user_id: str, saldo_fisico: float, note: str = "") -> Dict[str, Any]:
+    async def close_shift(self, user_id: str, saldo_fisico: float, note: str = "", receipt_photo_key: str = "", pos_photo_key: str = "") -> Dict[str, Any]:
         profile = await self._get_or_create_profile(user_id)
         result = await self.db.execute(
             select(Shifts).where(and_(Shifts.user_id == user_id, Shifts.status == "aperto"))
@@ -369,6 +408,12 @@ class CashOpsService:
         cash.current_shift_id = None
         cash.last_physical_balance = saldo_fisico
 
+        # Save photo keys
+        if receipt_photo_key:
+            shift.receipt_photo_key = receipt_photo_key
+        if pos_photo_key:
+            shift.pos_photo_key = pos_photo_key
+
         await self._create_movement(
             user_id=user_id,
             user_name=self._display_name(profile),
@@ -406,6 +451,8 @@ class CashOpsService:
             "scommesse_ippiche": "INCASSO_SCOMMESSE_IPPICHE",
             "scommesse_virtuali": "INCASSO_SCOMMESSE_VIRTUALI",
             "ricariche": "INCASSO_RICARICHE",
+            "paymat": "INCASSO_PAYMAT",
+            "voucher_betsmart": "INCASSO_VOUCHER_BETSMART",
         }
         tipo = tipo_map.get(categoria)
         if not tipo:
@@ -454,6 +501,9 @@ class CashOpsService:
             "scommesse_virtuali": "PAGAMENTO_SCOMMESSE_VIRTUALI",
             "vlt": "PAGAMENTO_VLT",
             "prelievi_web": "PAGAMENTO_PRELIEVI_WEB",
+            "paymat": "PAGAMENTO_PAYMAT",
+            "annulli": "PAGAMENTO_ANNULLI",
+            "pos": "PAGAMENTO_POS",
         }
         tipo = tipo_map.get(categoria)
         if not tipo:

@@ -29,5 +29,7 @@ class Shifts(Base):
     totale_sovvenzioni = Column(Float, nullable=True)
     totale_restituzioni = Column(Float, nullable=True)
     totale_svuotamenti = Column(Float, nullable=True)
+    receipt_photo_key = Column(String, nullable=True)
+    pos_photo_key = Column(String, nullable=True)
     created_at = Column(DateTime(timezone=True), default=datetime.now)
     updated_at = Column(DateTime(timezone=True), default=datetime.now, onupdate=datetime.now)

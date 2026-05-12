@@ -220,40 +220,63 @@ export async function supabaseLogin(email: string, password: string): Promise<{
 }> {
   const requestBody = { username: email.trim(), password };
 
-  console.log('[AUTH] === LOGIN START ===');
-  console.log('[AUTH] Using web-sdk client.apiCall.invoke for /api/v1/auth/login-password');
-  console.log('[AUTH] Request body:', JSON.stringify({ username: requestBody.username, password: '***' }));
+  console.log('[AUTH] ╔══════════════════════════════════════╗');
+  console.log('[AUTH] ║        LOGIN FLOW START              ║');
+  console.log('[AUTH] ╚══════════════════════════════════════╝');
+  console.log('[AUTH] Timestamp:', new Date().toISOString());
+  console.log('[AUTH] Username:', requestBody.username);
+  console.log('[AUTH] Password length:', password.length);
+  console.log('[AUTH] Using web-sdk client.apiCall.invoke');
+  console.log('[AUTH] Target URL: /api/v1/auth/login-password');
+  console.log('[AUTH] Window location:', window.location.href);
+  console.log('[AUTH] localStorage available:', (() => { try { localStorage.setItem('__test__', '1'); localStorage.removeItem('__test__'); return true; } catch { return false; } })());
 
   try {
+    console.log('[AUTH] 📡 Sending request via client.apiCall.invoke...');
+    const startTime = performance.now();
+
     const response = await client.apiCall.invoke({
       url: '/api/v1/auth/login-password',
       method: 'POST',
       data: requestBody,
     });
 
-    console.log('[AUTH] Response received:', { hasData: !!response?.data });
+    const elapsed = Math.round(performance.now() - startTime);
+    console.log(`[AUTH] 📡 Response received in ${elapsed}ms`);
+    console.log('[AUTH] Response type:', typeof response);
+    console.log('[AUTH] Response keys:', response ? Object.keys(response) : 'null');
+    console.log('[AUTH] Response.data type:', typeof response?.data);
+    console.log('[AUTH] Response.data:', JSON.stringify(response?.data, null, 2));
 
     const data = response?.data;
 
     if (!data) {
       console.error('[AUTH] ❌ Empty response from login endpoint');
+      console.error('[AUTH] Full response object:', JSON.stringify(response));
       return { success: false, error: 'Risposta del server vuota' };
     }
 
     // Check if response contains an error
     if (data.detail) {
-      console.error('[AUTH] ❌ Login failed - error:', data.detail);
+      console.error('[AUTH] ❌ Login failed - server returned error:', data.detail);
       return { success: false, error: data.detail };
     }
 
     const { token, user: userData } = data;
 
     if (!token || !userData) {
-      console.error('[AUTH] ❌ Invalid response - missing token or user data');
+      console.error('[AUTH] ❌ Invalid response structure - missing token or user');
+      console.error('[AUTH] Has token:', !!token, '| Has user:', !!userData);
+      console.error('[AUTH] Data keys:', Object.keys(data));
       return { success: false, error: 'Risposta del server non valida' };
     }
 
-    console.log('[AUTH] ✅ Login response data:', { token: token.substring(0, 20) + '...', user: userData });
+    console.log('[AUTH] ✅ Valid login response:');
+    console.log('[AUTH]   Token (first 30 chars):', token.substring(0, 30) + '...');
+    console.log('[AUTH]   User ID:', userData.id);
+    console.log('[AUTH]   User email:', userData.email);
+    console.log('[AUTH]   User name:', userData.name);
+    console.log('[AUTH]   User role:', userData.role);
 
     // Build profile from response
     const profile: UserProfile = {
@@ -273,30 +296,51 @@ export async function supabaseLogin(email: string, password: string): Promise<{
       name: userData.name || userData.email,
     };
 
-    // Store token in memory (always works)
+    // Store token in memory (always works, even when localStorage is blocked)
     memoryToken = token;
+    console.log('[AUTH] 💾 Token stored in memory (memoryToken set)');
 
-    // Also try localStorage (may be blocked in iframe)
-    safeSetItem(TOKEN_KEY, token);
-    safeSetItem(USER_KEY, JSON.stringify(user));
-    safeSetItem(PROFILE_KEY, JSON.stringify(profile));
+    // Also try localStorage (may be blocked in iframe / tracking prevention)
+    const lsToken = safeSetItem(TOKEN_KEY, token);
+    const lsUser = safeSetItem(USER_KEY, JSON.stringify(user));
+    const lsProfile = safeSetItem(PROFILE_KEY, JSON.stringify(profile));
+    console.log('[AUTH] 💾 localStorage results: token=', lsToken, 'user=', lsUser, 'profile=', lsProfile);
 
     // Update the zustand store (this works regardless of localStorage)
-    console.log('[AUTH] Updating zustand store...');
+    console.log('[AUTH] 🔄 Updating zustand store...');
     useAuthStore.getState().setUser(user);
     useAuthStore.getState().setProfile(profile);
-    console.log('[AUTH] ✅ Store updated.');
 
-    console.log('[AUTH] === LOGIN SUCCESS ===');
+    // Verify store was updated
+    const storeState = useAuthStore.getState();
+    console.log('[AUTH] ✅ Store updated. Current state:');
+    console.log('[AUTH]   user:', storeState.user?.email);
+    console.log('[AUTH]   profile.ruolo:', storeState.profile?.ruolo);
+
+    console.log('[AUTH] ╔══════════════════════════════════════╗');
+    console.log('[AUTH] ║        LOGIN SUCCESS ✅              ║');
+    console.log('[AUTH] ╚══════════════════════════════════════╝');
     return { success: true, profile };
   } catch (err: any) {
-    console.error('[AUTH] ❌ Login exception:', err);
+    console.error('[AUTH] ╔══════════════════════════════════════╗');
+    console.error('[AUTH] ║        LOGIN EXCEPTION ❌            ║');
+    console.error('[AUTH] ╚══════════════════════════════════════╝');
+    console.error('[AUTH] Error type:', err?.constructor?.name || typeof err);
+    console.error('[AUTH] Error message:', err?.message);
+    console.error('[AUTH] Error stack:', err?.stack);
+    console.error('[AUTH] Error response:', JSON.stringify(err?.response));
+    console.error('[AUTH] Error response.data:', JSON.stringify(err?.response?.data));
+    console.error('[AUTH] Error response.status:', err?.response?.status);
+    console.error('[AUTH] Error detail:', err?.detail);
+    console.error('[AUTH] Full error object:', err);
 
     // Handle HTTP error responses from apiCall
     const errorMessage = err?.response?.data?.detail
       || err?.detail
       || err?.message
       || 'Errore di connessione';
+
+    console.error('[AUTH] Resolved error message:', errorMessage);
 
     // Map common errors
     if (errorMessage.includes('401') || errorMessage.includes('Credenziali')) {
@@ -319,7 +363,10 @@ export async function authenticatedFetch<T = any>(
   body?: Record<string, any>
 ): Promise<T> {
   const token = getToken();
+  console.log(`[AUTH-FETCH] ${method} ${url} | token exists: ${!!token} | token source: ${memoryToken ? 'memory' : 'localStorage'}`);
+
   if (!token) {
+    console.error('[AUTH-FETCH] ❌ No auth token available (neither memory nor localStorage)');
     throw new Error('No auth session available');
   }
 
@@ -335,10 +382,14 @@ export async function authenticatedFetch<T = any>(
       },
     });
 
+    console.log(`[AUTH-FETCH] ✅ ${method} ${url} - success`);
     return response?.data as T;
   } catch (err: any) {
+    console.error(`[AUTH-FETCH] ❌ ${method} ${url} - error:`, err?.message || err);
+
     // Handle 401 - token expired
     if (err?.response?.status === 401 || err?.status === 401) {
+      console.warn('[AUTH-FETCH] 🔒 401 received - clearing auth state');
       memoryToken = null;
       safeRemoveItem(TOKEN_KEY);
       safeRemoveItem(USER_KEY);

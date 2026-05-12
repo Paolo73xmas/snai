@@ -60,6 +60,8 @@ async def login_password(
     if not stored_hash or stored_hash != password_hash:
         raise HTTPException(status_code=401, detail="Credenziali non valide")
 
+    if profile.status == "sospeso":
+        raise HTTPException(status_code=403, detail="Account sospeso. Contatta l'amministratore.")
     if profile.status != "attivo":
         raise HTTPException(status_code=403, detail="Account disattivato")
 

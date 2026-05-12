@@ -23,6 +23,8 @@ import {
   UserCheck,
   UserCog,
   UserPlus,
+  Ban,
+  CheckCircle2,
 } from 'lucide-react';
 
 interface UserProfile {
@@ -56,7 +58,14 @@ const roleIcons: Record<string, React.ElementType> = {
 
 const statusColors: Record<string, string> = {
   attivo: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400',
+  sospeso: 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400',
   disattivato: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400',
+};
+
+const statusLabels: Record<string, string> = {
+  attivo: 'Attivo',
+  sospeso: 'Sospeso',
+  disattivato: 'Disattivato',
 };
 
 interface CreateUserForm {
@@ -85,6 +94,7 @@ export default function UsersPage() {
   const [loading, setLoading] = useState(true);
   const [changingRole, setChangingRole] = useState<{ userId: string; role: string } | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [suspending, setSuspending] = useState<string | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [form, setForm] = useState<CreateUserForm>(initialForm);
   const [creating, setCreating] = useState(false);
@@ -119,6 +129,23 @@ export default function UsersPage() {
       toast.error(err?.response?.data?.detail || err?.message || 'Errore cambio ruolo');
     } finally {
       setSubmitting(false);
+    }
+  };
+
+  const handleToggleSuspension = async (targetUserId: string) => {
+    setSuspending(targetUserId);
+    try {
+      const res = await cashApi<{ success: boolean; new_status: string; message: string }>('/toggle-suspension', 'POST', {
+        target_user_id: targetUserId,
+      });
+      if (res.success) {
+        toast.success(res.message);
+        fetchUsers();
+      }
+    } catch (err: any) {
+      toast.error(err?.response?.data?.detail || err?.message || 'Errore sospensione utente');
+    } finally {
+      setSuspending(null);
     }
   };
 
@@ -394,9 +421,9 @@ export default function UsersPage() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 flex-wrap">
                         <Badge className={`${statusColors[user.status] || 'bg-gray-100 text-gray-800'} border-0 text-xs rounded-full`}>
-                          {user.status === 'attivo' ? 'Attivo' : 'Disattivato'}
+                          {statusLabels[user.status] || user.status}
                         </Badge>
 
                         {isChanging ? (
@@ -432,15 +459,39 @@ export default function UsersPage() {
                             </Button>
                           </div>
                         ) : (
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="rounded-2xl h-9 text-xs gap-1"
-                            onClick={() => setChangingRole({ userId: user.user_id, role: user.ruolo })}
-                          >
-                            <RoleIcon className="w-3.5 h-3.5" />
-                            {roleLabels[user.ruolo] || user.ruolo}
-                          </Button>
+                          <>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="rounded-2xl h-9 text-xs gap-1"
+                              onClick={() => setChangingRole({ userId: user.user_id, role: user.ruolo })}
+                            >
+                              <RoleIcon className="w-3.5 h-3.5" />
+                              {roleLabels[user.ruolo] || user.ruolo}
+                            </Button>
+                            {!isCurrentUser && (
+                              <Button
+                                variant={user.status === 'sospeso' ? 'default' : 'outline'}
+                                size="sm"
+                                className={`rounded-2xl h-9 text-xs gap-1 ${
+                                  user.status === 'sospeso'
+                                    ? 'bg-green-600 hover:bg-green-700 text-white'
+                                    : 'border-orange-300 text-orange-700 hover:bg-orange-50 dark:border-orange-700 dark:text-orange-400 dark:hover:bg-orange-950/30'
+                                }`}
+                                disabled={suspending === user.user_id}
+                                onClick={() => handleToggleSuspension(user.user_id)}
+                              >
+                                {suspending === user.user_id ? (
+                                  <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                                ) : user.status === 'sospeso' ? (
+                                  <CheckCircle2 className="w-3.5 h-3.5" />
+                                ) : (
+                                  <Ban className="w-3.5 h-3.5" />
+                                )}
+                                {user.status === 'sospeso' ? 'Riattiva' : 'Sospendi'}
+                              </Button>
+                            )}
+                          </>
                         )}
                       </div>
                     </div>
